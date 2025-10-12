@@ -27,6 +27,13 @@ function direction(e) {
     else if (e.keycode == 40 && d !='UP') d = 'DOWN';
 }
 
+function collision(head,arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (head.x == arr[i].y) return true;
+    }
+    return false;
+}
+
 
 
 
