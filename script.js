@@ -67,8 +67,18 @@ function draw() {
         snake.pop();
     }
 
-    
+    let newHead = {x: snakeX, y: snakeY};
+
+    if (snakeX < 0 || snakeY < 0 || snakeX >= canvas.width || snakeY >= canvas.height || collision(newHead,snake)) {
+        clearInterval(game);
+        document.getElementById('gameOver').style.display = 'block';
+        return;
+    }
+    snake.unshift(newHead);
 }
+
+
+
 
 
 
