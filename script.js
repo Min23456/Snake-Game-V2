@@ -35,6 +35,41 @@ function collision(head,arr) {
 }
 
 
+function draw() {
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0,0, canvas.width, canvas.height);
+
+
+    for (let i = 0; i < snake.length; i++) {
+        ctx.fillStyle = i == 0 ? '#4CAF50' : '#8BC34A'; 
+        ctx.fillRect(snake[i].x, snake[i].y, box, box);
+        ctx.strokeStyle = '#000';
+        ctx.strokeRect(snake[i].x, snake[i].y, box, box);
+    }
+    ctx.fillStyle = '#ff4444';
+    ctx.fillRect(food.x,food.y,box, box);
+    let snakeX = snake[0].x;
+    let snakeY = snake[0].y; 
+
+    if (d == 'LEFT') snakeX -= box;
+    if (d == 'UP') snakeY -= box; 
+    if (d == 'RIGHT') snakeX += box; 
+    if (d == 'DOWN') snakeY += box;
+    
+    if (snakeX == food.x && snakeY == food.y) {
+        score++;
+        document.getElementById('score').innerText = 'Score ' + score;
+        food = {
+            x: Math.floor(Math.random()* 19 + 1) * box,
+            y: Math.floor(Math.random()* 19 + 1) * box
+        };
+    }else {
+        snake.pop();
+    }
+
+    
+}
+
 
 
 
