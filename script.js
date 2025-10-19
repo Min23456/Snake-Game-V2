@@ -77,8 +77,17 @@ function draw() {
     snake.unshift(newHead);
 }
 
+function restart() {
+    snake = [{ x: 10 * box, y:10 * box}];
+    score = 0;
+    d = undefined;
+    document.getElementById('score').innerText = 'Score 0';
+    document.getElementById('gameOver').style.display = 'none';
+    clearInterval(game);
+    game = setInterval(draw,100);
+}
 
-
+game = setInterval(draw,100);
 
 
 
