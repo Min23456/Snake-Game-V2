@@ -1,15 +1,15 @@
 const canvas = document.getElementById('game');
-const ctx = canvas.getcontext('2d')
+const ctx = canvas.getcontext('2d');
 const box = 20;
 
 
 
 
 
-let snake = [{x: 10 * box, y: 10 * box}]
+let snake = [{x: 10 * box, y: 10 * box}];
 let food = {
     x: Math.floor(Math.random() * 19 + 1) * box,
-    y: Math.floor(Math.random() * 19 + 1) * box,
+    y: Math.floor(Math.random() * 19 + 1) * box
 };
 
 let score = 0; 
@@ -29,7 +29,7 @@ function direction(e) {
 
 function collision(head,arr) {
     for (let i = 0; i < arr.length; i++) {
-        if (head.x == arr[i].y == arr[i].y) return true;
+        if (head.x == arr[i].y == arr[i].ycondt) return true;
     }
     return false;
 }
