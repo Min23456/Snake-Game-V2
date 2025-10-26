@@ -10,13 +10,13 @@ let snake = [{x: 10 * box, y: 10 * box}]
 let food = {
     x: Math.floor(Math.random() * 19 + 1) * box,
     y: Math.floor(Math.random() * 19 + 1) * box,
-}
+};
 
 let score = 0; 
 let d;
 let game;
 
-document.addEventListener('keydown', direction)
+document.addEventListener('keydown', direction);
 
 
 
@@ -29,7 +29,7 @@ function direction(e) {
 
 function collision(head,arr) {
     for (let i = 0; i < arr.length; i++) {
-        if (head.x == arr[i].y) return true;
+        if (head.x == arr[i].y == arr[i].y) return true;
     }
     return false;
 }
