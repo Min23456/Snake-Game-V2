@@ -1,5 +1,5 @@
 const canvas = document.getElementById('game');
-const ctx = canvas.getcontext('2d');
+const ctx = canvas.getContext('2d');
 const box = 20;
 
 
@@ -21,15 +21,15 @@ document.addEventListener('keydown', direction);
 
 
 function direction(e) {
-    if (e.keycode == 37 && d != 'RIGHT' ) d = 'LEFT';
-    else if (e.keycode == 38 && d !='DOWN') d = 'UP';
-    else if (e.keycode == 39 && d !='LEFT') d = 'RIGHT';
-    else if (e.keycode == 40 && d !='UP') d = 'DOWN';
+    if (e.keyCode == 37 && d != 'RIGHT' ) d = 'LEFT';
+    else if (e.keyCode == 38 && d !='DOWN') d = 'UP';
+    else if (e.keyCode == 39 && d !='LEFT') d = 'RIGHT';
+    else if (e.keyCode == 40 && d !='UP') d = 'DOWN';
 }
 
 function collision(head,arr) {
     for (let i = 0; i < arr.length; i++) {
-        if (head.x == arr[i].y == arr[i].ycondt) return true;
+        if (head.x == arr[i].x && head.y == arr[i].y) return true;
     }
     return false;
 }
